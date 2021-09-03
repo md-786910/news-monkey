@@ -15,11 +15,7 @@ function Home(query, page) {
   let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${api2}&pageSize=38&page=${pages}`;
 
   function getData() {
-    axios({
-      method: "get",
-      url: url,
-      responseType: "json",
-    }).then(function (response) {
+    axios(url).then(function (response) {
       setSpin(false);
       setNews(response.data.articles);
     });
